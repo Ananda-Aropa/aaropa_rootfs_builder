@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
 
 env:
+  REF: ${{ github.ref }}
+  AUTHOR: ${{ secrets.RELEASE_USERNAME }}
+  PAT: ${{ secrets.RELEASE_TOKEN }}
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
