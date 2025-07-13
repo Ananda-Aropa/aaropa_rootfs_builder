@@ -1,4 +1,4 @@
-FROM ghcr.io/Ananda-Aropa/aaropa_rootfs_base:latest as builder
+FROM ghcr.io/ananda-aropa/aaropa_rootfs_base:latest as builder
 
 COPY template /
 COPY packages /
