@@ -65,3 +65,15 @@ jobs:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
+
+      - name: Trigger Workflow after deployment
+        uses: convictional/trigger-workflow-and-wait@v1.6.5
+        with:
+          owner: Ananda-Aropa
+          repo: aaropa_rootfs_qemu
+          github_token: ${{ env.PAT }}
+          github_user: ${{ env.AUTHOR }}
+          workflow_file_name: build_rootfs.yml
+          ref: main
+          trigger_workflow: true
+          wait_workflow: false
